@@ -3,7 +3,7 @@ package com.bek_qa.java_barancev;
 public class MyFirstProgram {
   public static void main(String[] args) {
     Square squareVarInMain = new Square(5);
-    //squareVarInMain.lengthFromSqureClass = 5; //We set length from Square class here
+    //squareVarInMain.lengthFromSquareClass = 5; //We set length from Square class here
     System.out.println("Area of a cube with a length of " + squareVarInMain.lengthFromSqureClass +
                        " is equal to " + squareVarInMain.area());
     //Now we call this method through className.classMethod() principle
