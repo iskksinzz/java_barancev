@@ -6,11 +6,11 @@ package com.bek_qa.java_barancev;
 public class PointsMain {
     public static void main(String[] args) {
 
-        Point p = new Point();
+        Point p = new Point(44.0, 23);
+        System.out.println("Расстояние между двумя точками " + p.distance());
 
-        public static double distance(Point p1, Point p2 ){
-            return p2 - p1;
-        }
+
+
     }
 
 }
