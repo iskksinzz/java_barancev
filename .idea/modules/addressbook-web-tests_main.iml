@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id="sandbox:test" external.linked.project.path="$MODULE_DIR$/../../sandbox" external.root.project.path="$MODULE_DIR$/../../sandbox" external.system.id="GRADLE" external.system.module.group="" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+<module external.linked.project.id="addressbook-web-tests:main" external.linked.project.path="$MODULE_DIR$/../../addressbook-web-tests" external.root.project.path="$MODULE_DIR$/../../addressbook-web-tests" external.system.id="GRADLE" external.system.module.group="" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
-    <output-test url="file://$MODULE_DIR$/../../sandbox/build/classes/test" />
+    <output url="file://$MODULE_DIR$/../../addressbook-web-tests/build/classes/main" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../sandbox/src/test">
-      <sourceFolder url="file://$MODULE_DIR$/../../sandbox/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../sandbox/src/test/resources" type="java-test-resource" />
+    <content url="file://$MODULE_DIR$/../../addressbook-web-tests/src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../addressbook-web-tests/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../addressbook-web-tests/src/main/resources" type="java-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="sandbox_main" />
     <orderEntry type="library" name="Gradle: org.testng:testng:6.11" level="project" />
     <orderEntry type="library" name="Gradle: org.seleniumhq.selenium:selenium-java:2.53.1" level="project" />
     <orderEntry type="library" name="Gradle: com.beust:jcommander:1.64" level="project" />
@@ -54,5 +53,4 @@
     <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpclient:4.5.2" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpcore:4.4.4" level="project" />
   </component>
-  <component name="TestModuleProperties" production-module="sandbox_main" />
 </module>
