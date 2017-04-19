@@ -32,7 +32,7 @@ public class NewEntryTests {
     }
 
     @Test
-    public void NewEntryTests() {
+    public void testNewEntry() {
         clickAddNewEntry();
         enterMyInfo(new ContactData("Bek", "Ken", "2872 E.Broad St", "2872 E.Broad St\nColumbus, OH 43204", "(614)300-0733", "iskk@yahoo.com"));
         saveEnteredInfo();
