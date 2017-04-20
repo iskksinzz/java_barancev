@@ -25,6 +25,10 @@ public class TestBase {
 
     @BeforeMethod
     public void setUp() throws Exception {
+        init();
+    }
+
+    private void init() {
         wd = new FirefoxDriver();
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         wd.get("http://localhost/dashboard/");
@@ -73,6 +77,10 @@ public class TestBase {
 
     @AfterMethod
     public void tearDown() {
+        stop();
+    }
+
+    private void stop() {
         wd.quit();
     }
 
