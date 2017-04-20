@@ -24,13 +24,4 @@ public class GroupDeletionTests extends TestBase {
         returnToGroupPage();
     }
 
-    private void deleteSelectedGroups() {
-        wd.findElement(By.xpath("//div[@id='content']/form/input[5]")).click();
-    }
-
-    private void selectGroup() {
-        if (!wd.findElement(By.xpath("//div[@id='content']/form/span[3]/input")).isSelected()) {
-            wd.findElement(By.xpath("//div[@id='content']/form/span[3]/input")).click();
-        }
-    }
 }
