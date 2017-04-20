@@ -71,7 +71,7 @@ public class NewEntryTests {
 
     @AfterMethod
     public void tearDown() {
-        //wd.quit();
+        wd.quit();
     }
     
     public static boolean isAlertPresent(FirefoxDriver wd) {
