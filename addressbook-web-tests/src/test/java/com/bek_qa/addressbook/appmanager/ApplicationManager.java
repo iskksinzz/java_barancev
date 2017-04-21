@@ -14,6 +14,7 @@ public class ApplicationManager {
     FirefoxDriver wd;
     private NavigationHelper navigationHelper;
     private GroupHelper groupHelper;
+
     public static boolean isAlertPresent(FirefoxDriver wd) {
         try {
             wd.switchTo().alert();
@@ -35,13 +36,13 @@ public class ApplicationManager {
     }
 
     public void login(String username, String password) {
-        navigationHelper.wd.findElement(By.name("pass")).click();
-        navigationHelper.wd.findElement(By.name("pass")).clear();
-        navigationHelper.wd.findElement(By.name("pass")).sendKeys(password);
-        navigationHelper.wd.findElement(By.name("user")).click();
-        navigationHelper.wd.findElement(By.name("user")).clear();
-        navigationHelper.wd.findElement(By.name("user")).sendKeys(username);
-        navigationHelper.wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
+        wd.findElement(By.name("pass")).click();
+        wd.findElement(By.name("pass")).clear();
+        wd.findElement(By.name("pass")).sendKeys(password);
+        wd.findElement(By.name("user")).click();
+        wd.findElement(By.name("user")).clear();
+        wd.findElement(By.name("user")).sendKeys(username);
+        wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
     }
 
     public void returnToGroupPage() {
@@ -53,15 +54,15 @@ public class ApplicationManager {
     }
 
     public void fillGroupForm(GroupData groupData) {
-        navigationHelper.wd.findElement(By.name("group_name")).click();
-        navigationHelper.wd.findElement(By.name("group_name")).clear();
-        navigationHelper.wd.findElement(By.name("group_name")).sendKeys(groupData.getGroupName());
-        navigationHelper.wd.findElement(By.name("group_header")).click();
-        navigationHelper.wd.findElement(By.name("group_header")).clear();
-        navigationHelper.wd.findElement(By.name("group_header")).sendKeys(groupData.getGroupHeader());
-        navigationHelper.wd.findElement(By.name("group_footer")).click();
-        navigationHelper.wd.findElement(By.name("group_footer")).clear();
-        navigationHelper.wd.findElement(By.name("group_footer")).sendKeys(groupData.getGroupFooter());
+        wd.findElement(By.name("group_name")).click();
+        wd.findElement(By.name("group_name")).clear();
+        wd.findElement(By.name("group_name")).sendKeys(groupData.getGroupName());
+        wd.findElement(By.name("group_header")).click();
+        wd.findElement(By.name("group_header")).clear();
+        wd.findElement(By.name("group_header")).sendKeys(groupData.getGroupHeader());
+        wd.findElement(By.name("group_footer")).click();
+        wd.findElement(By.name("group_footer")).clear();
+        wd.findElement(By.name("group_footer")).sendKeys(groupData.getGroupFooter());
     }
 
     public void createNewGroup() {
@@ -77,8 +78,8 @@ public class ApplicationManager {
     }
 
     public void selectGroup() {
-        if (!navigationHelper.wd.findElement(By.xpath("//div[@id='content']/form/span[3]/input")).isSelected()) {
-            navigationHelper.wd.findElement(By.xpath("//div[@id='content']/form/span[3]/input")).click();
+        if (!wd.findElement(By.xpath("//div[@id='content']/form/span[3]/input")).isSelected()) {
+            wd.findElement(By.xpath("//div[@id='content']/form/span[3]/input")).click();
         }
     }
 
