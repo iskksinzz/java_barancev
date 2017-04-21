@@ -1,4 +1,4 @@
-package com.bek_qa.addressbook;
+package com.bek_qa.addressbook.model;
 
 public class ContactData {
     private final String fName;
