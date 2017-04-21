@@ -9,7 +9,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  */
 public class GroupHelper {
     private FirefoxDriver wd;
-    public GroupHelper(FirefoxDriver wd) {
+
+    public GroupHelper(FirefoxDriver wd) { //Constructor
         this.wd = wd;
     }
 
