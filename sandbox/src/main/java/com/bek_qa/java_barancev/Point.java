@@ -11,12 +11,8 @@ public class Point {
         this.x = x;
         this.y = y;
     }
-    //Перегружаем метод. Он имеет 1 аргумент и его значение передаётся обеим точкам
-//    public Point(double x) {
-//        this.x = x;
-//        this.y = y;
-//    }
-    public double distance(Point secondObject) {
-        return Math.sqrt(Math.pow(x - secondObject.x, 2) + Math.pow(y - secondObject.y, 2) );
+
+    public double distance(Point p) {
+        return Math.sqrt(Math.pow(x - p.x, 2) + Math.pow(y - p.y, 2) );
     }
 }
