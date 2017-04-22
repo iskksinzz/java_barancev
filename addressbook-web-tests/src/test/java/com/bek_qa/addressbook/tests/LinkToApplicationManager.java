@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
  */
 //1st Layer. This class initializes ApplicationManager object
 // before each test method like GroupCreationTests runs
-public class Komutator {
+public class LinkToApplicationManager {
 
     protected final ApplicationManager app = new ApplicationManager();
 

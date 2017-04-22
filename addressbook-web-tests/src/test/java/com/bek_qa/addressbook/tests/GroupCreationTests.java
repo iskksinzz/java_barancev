@@ -6,8 +6,8 @@ import org.testng.annotations.Test;
 //This class contains the actual test in the form of method that
 //has test methods inside it, which are located in different class
 //'ApplicationManager' to which this test method is connected
-//through ref obj 'app' that was created in class 'Komutator'
-public class GroupCreationTests extends Komutator {
+//through ref obj 'app' that was created in class 'LinkToApplicationManager'
+public class GroupCreationTests extends LinkToApplicationManager {
 
     @Test
     public void testGroupCreation() {
@@ -22,7 +22,7 @@ public class GroupCreationTests extends Komutator {
 
 //Line 14. goToGroupPage is directly in ApplicationManager so
 //we access it through
-// app(Komutator).goToGroupPage() (it's inside of ApplicationManager)
+// app(LinkToApplicationManager).goToGroupPage() (it's inside of ApplicationManager)
 
 //Line 15. this method is inside GroupHelper that we can access
-//through app(Komutator/getGroupHelper()/).createNewGroup()
+//through app(LinkToApplicationManager/getGroupHelper()/).createNewGroup()
