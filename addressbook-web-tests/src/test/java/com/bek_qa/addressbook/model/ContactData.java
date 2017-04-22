@@ -16,7 +16,6 @@ public class ContactData {
         this.cellNumber = cellNumber;
         this.eMail = eMail;
     }
-
     public String getfName() {
         return fName;
     }
