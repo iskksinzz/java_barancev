@@ -13,6 +13,8 @@ import java.util.concurrent.TimeUnit;
 // 2nd Layer. This class has all reusable methods for all our tests
 // This class interacts with the actual testing system
 public class ApplicationManager {
+//When Delegation happens ref obj is created to connect to class
+//in which needed methods are located
 
     private final GroupHelper groupHelper = new GroupHelper();
 

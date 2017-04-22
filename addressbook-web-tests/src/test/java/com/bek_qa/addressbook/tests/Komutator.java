@@ -9,10 +9,8 @@ import org.testng.annotations.BeforeMethod;
  */
 //1st Layer. This class initializes ApplicationManager object
 // before each test method like GroupCreationTests runs
-public class TestBase {
+public class Komutator {
 
-//ApplicationManager's methods are accessed with creation of
-//reference object 'app'
     protected final ApplicationManager app = new ApplicationManager();
 
     @BeforeMethod
@@ -30,4 +28,12 @@ public class TestBase {
 
 }
 
-// And then each object is destroyed by GC once test method finishes running
+//Video 9
+//ApplicationManager's methods are accessed with creation of
+//reference object 'app'
+// And then each object is destroyed by GC once test method
+// finishes running
+
+//Video 10
+//When Delegation happens ref obj is created to connect to class
+//in which needed methods are located through getters
