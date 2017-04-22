@@ -1,5 +1,6 @@
-package com.bek_qa.addressbook;
+package com.bek_qa.addressbook.tests;
 
+import com.bek_qa.addressbook.appmanager.ApplicationManager;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 

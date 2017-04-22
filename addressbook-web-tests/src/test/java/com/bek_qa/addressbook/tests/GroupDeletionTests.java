@@ -1,4 +1,4 @@
-package com.bek_qa.addressbook;
+package com.bek_qa.addressbook.tests;
 
 import org.testng.annotations.Test;
 

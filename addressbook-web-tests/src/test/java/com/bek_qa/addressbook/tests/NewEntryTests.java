@@ -1,5 +1,6 @@
-package com.bek_qa.addressbook;
+package com.bek_qa.addressbook.tests;
 
+import com.bek_qa.addressbook.model.ContactData;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
