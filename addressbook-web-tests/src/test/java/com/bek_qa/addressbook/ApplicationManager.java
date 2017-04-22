@@ -9,6 +9,8 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by Bek on 4/20/2017.
  */
+
+// 2nd Layer. This class interacts with the actual testing system
 public class ApplicationManager {
     FirefoxDriver wd;
 

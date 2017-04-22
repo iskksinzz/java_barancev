@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeMethod;
  */
 public class TestBase {
 
+    //1st Layer. This class initializes ApplicationManager object  before each test method like GroupCreationTests runs
     protected final ApplicationManager app = new ApplicationManager();
 
     @BeforeMethod
@@ -21,3 +22,5 @@ public class TestBase {
     }
 
 }
+
+// And then each object is destroyed by GC once test method finishes running
