@@ -15,36 +15,40 @@ public class GroupHelper {
     }
 
     public void returnToGroupPage() {
-        wd.findElement(By.linkText("group page")).click();
+        click(By.linkText("group page"));
     }
 
     public void submitGroupCreation() {
-        wd.findElement(By.name("submit")).click();
+        click(By.name("submit"));
+    }
+
+    private void click(By locator) {
+        wd.findElement(locator).click();
     }
 
     public void fillGroupForm(GroupData groupData) {
-        wd.findElement(By.name("group_name")).click();
-        wd.findElement(By.name("group_name")).clear();
-        wd.findElement(By.name("group_name")).sendKeys(groupData.getGroupName());
-        wd.findElement(By.name("group_header")).click();
-        wd.findElement(By.name("group_header")).clear();
-        wd.findElement(By.name("group_header")).sendKeys(groupData.getGroupHeader());
-        wd.findElement(By.name("group_footer")).click();
-        wd.findElement(By.name("group_footer")).clear();
-        wd.findElement(By.name("group_footer")).sendKeys(groupData.getGroupFooter());
+        type("group_name", groupData.getGroupName());
+        type("group_header", groupData.getGroupHeader());
+        type("group_footer", groupData.getGroupFooter());
+    }
+
+    private void type(String locator, String text) {
+        click(By.name(locator));
+        wd.findElement(By.name(locator)).clear();
+        wd.findElement(By.name(locator)).sendKeys(text);
     }
 
     public void createNewGroup() {
-        wd.findElement(By.name("new")).click();
+        click(By.name("new"));
     }
 
     public void deleteSelectedGroups() {
-        wd.findElement(By.xpath("//div[@id='content']/form/input[5]")).click();
+        click(By.xpath("//div[@id='content']/form/input[5]"));
     }
 
     public void selectGroup() {
         if (!wd.findElement(By.xpath("//div[@id='content']/form/span[3]/input")).isSelected()) {
-            wd.findElement(By.xpath("//div[@id='content']/form/span[3]/input")).click();
+            click(By.xpath("//div[@id='content']/form/span[3]/input"));
         }
     }
 }
