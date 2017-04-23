@@ -12,7 +12,7 @@ public class GroupCreationTests extends LinkToApplicationManager {
 
     @Test
     public void testGroupCreation() {
-        applicationManager.goToGroupPage();
+        applicationManager.getNavigationHelper().goToGroupPage();
         applicationManager.getGroupHelper().createNewGroup();
         applicationManager.getGroupHelper().fillGroupForm(new GroupData("test7", "test8", "test9"));
         applicationManager.getGroupHelper().submitGroupCreation();

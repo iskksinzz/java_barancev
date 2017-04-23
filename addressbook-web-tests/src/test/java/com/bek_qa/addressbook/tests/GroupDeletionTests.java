@@ -11,7 +11,7 @@ public class GroupDeletionTests extends LinkToApplicationManager {
 
     @Test
     public void GroupDeletionTests() {
-        applicationManager.goToGroupPage();
+        applicationManager.getNavigationHelper().goToGroupPage();
         applicationManager.getGroupHelper().selectGroup();
         applicationManager.getGroupHelper().deleteSelectedGroups();
         applicationManager.getGroupHelper().returnToGroupPage();
