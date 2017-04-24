@@ -6,16 +6,18 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 /**
  * Created by Bek on 4/23/2017.
  */
-public class NavigationHelper {
-    //When Delegation happens ref obj is created to connect to class
-    //in which needed methods are located
+public class NavigationHelper extends HelperBase {
+// We don't need a reference obj to FirefoxDricer since we inherit it from base call
         private FirefoxDriver wd;
 
     public NavigationHelper(FirefoxDriver wd) {
-        this.wd = wd;
+        super(wd); // 1. We call constructor of a base class
     }
 
     public void goToGroupPage() {
-        wd.findElement(By.linkText("groups")).click();
+        click(By.linkText("groups"));
+
+    //We change this code to click()
+        //wd.findElement(By.linkText("groups")).click();
     }
 }

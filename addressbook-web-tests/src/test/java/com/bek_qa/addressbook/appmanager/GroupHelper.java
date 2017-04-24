@@ -8,10 +8,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  * Created by Bek on 4/22/2017.
  */
 public class GroupHelper extends HelperBase {
-    private FirefoxDriver wd;
 
     public GroupHelper(FirefoxDriver wd) {
-        this.wd = wd;
+        super(wd); //This is a constructor of a base class
     }
 
     public void returnToGroupPage() {
@@ -22,20 +21,10 @@ public class GroupHelper extends HelperBase {
         click(By.name("submit"));
     }
 
-    private void click(By locator) {
-        wd.findElement(locator).click();
-    }
-
     public void fillGroupForm(GroupData groupData) {
          type(By.name("group_name"), groupData.getGroupName());
         type(By.name("group_header"), groupData.getGroupHeader());
         type(By.name("group_footer"), groupData.getGroupFooter());
-    }
-
-    private void type(By locator, String text) {
-        click(locator);
-        wd.findElement(locator).clear();
-        wd.findElement(locator).sendKeys(text);
     }
 
     public void createNewGroup() {
