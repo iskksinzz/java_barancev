@@ -7,7 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 /**
  * Created by Bek on 4/22/2017.
  */
-public class GroupHelper {
+public class GroupHelper extends HelperBase {
     private FirefoxDriver wd;
 
     public GroupHelper(FirefoxDriver wd) {
