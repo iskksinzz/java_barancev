@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 //Video 9.
 // 2nd Layer. This class has all reusable methods for all our tests
 // This class interacts with the actual testing system
-public class ApplicationManager {
+public class ApplicationManager  {
 
     FirefoxDriver wd;
     private SessionHelper sessionHelper;
