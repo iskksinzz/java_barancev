@@ -1,5 +1,7 @@
-package com.bek_qa.addressbook;
+package com.bek_qa.addressbook.tests;
 
+import com.bek_qa.addressbook.model.ContactData;
+import com.bek_qa.addressbook.TestBase;
 import org.testng.annotations.Test;
 
 public class ContactCreationTest extends TestBase {

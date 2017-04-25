@@ -1,5 +1,7 @@
-package com.bek_qa.addressbook;
+package com.bek_qa.addressbook.appManager;
 
+import com.bek_qa.addressbook.model.ContactData;
+import com.bek_qa.addressbook.model.GroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -21,14 +23,14 @@ public class ApplicationManager {
         }
     }
 
-    protected void init() {
+    public void init() {
         wd = new FirefoxDriver();
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         wd.get("http://localhost/addressbook/");
         login("admin", "secret"); //used to be login() before refactoring
     }
 
-    private void login(String username, String password) {
+    public void login(String username, String password) {
         wd.findElement(By.name("user")).click();
         wd.findElement(By.name("user")).clear();
         wd.findElement(By.name("user")).sendKeys(username); //used to be sendKeys("admin")
@@ -39,15 +41,15 @@ public class ApplicationManager {
     }
 
     //Helper methods refactored from Selenium generated code inside testGroupCreation()
-    protected void gotoGroupPage() {
+    public void gotoGroupPage() {
         wd.findElement(By.linkText("groups")).click();
     }
 
-    protected void initGroupCreation() {
+    public void initGroupCreation() {
         wd.findElement(By.name("new")).click();
     }
 
-    protected void fillGroupForm(GroupData groupData) {
+    public void fillGroupForm(GroupData groupData) {
 //used to be just fillGroupForm()
 //1. We refactored by extracting parameters fillGroupForm(String groupName, String groupHeader, String groupFooter)
 //2. We refactored by extracting parameter objects. class GroupData was created
@@ -74,37 +76,37 @@ public class ApplicationManager {
         wd.findElement(By.name("group_footer")).sendKeys(groupData.getGroupFooter());//used to be ("group footer test")
     }
 
-    protected void submitGroupCreation() {
+    public void submitGroupCreation() {
         wd.findElement(By.name("submit")).click();
     }
 
-    protected void returnToGroupPage() {
+    public void returnToGroupPage() {
         wd.findElement(By.linkText("group page")).click();
     }
 
-    protected void stop() {
+    public void stop() {
         wd.quit();
     }
 
     // This method came from GroupDeletionTest when we created this method there
     // and access modifier was private there
-    protected void deletSelectedGroups() {
+    public void deletSelectedGroups() {
         wd.findElement(By.name("delete")).click();
     }
 
     // This method came from GroupDeletionTest when we created this method there
     // and access modifier was private there
-    protected void selectGroup() {
+    public void selectGroup() {
         if (!wd.findElement(By.name("selected[]")).isSelected()) {
             wd.findElement(By.name("selected[]")).click();
         }
     }
 
-    protected void initContactCreation() {
+    public void initContactCreation() {
         wd.findElement(By.linkText("add new")).click();
     }
 
-    protected void fillContactForm(ContactData contactData) {
+    public void fillContactForm(ContactData contactData) {
         wd.findElement(By.name("firstname")).click();
         wd.findElement(By.name("firstname")).clear();
         wd.findElement(By.name("firstname")).sendKeys(contactData.getfName());
@@ -131,11 +133,11 @@ public class ApplicationManager {
         wd.findElement(By.name("email")).sendKeys(contactData.getEmail());
     }
 
-    protected void submitContactCreation() {
+    public void submitContactCreation() {
         wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
     }
 
-    protected void returnToHomePage() {
+    public void returnToHomePage() {
         wd.findElement(By.linkText("home page")).click();
     }
 }
