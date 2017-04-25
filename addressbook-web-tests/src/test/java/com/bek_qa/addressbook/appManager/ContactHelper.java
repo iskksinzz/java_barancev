@@ -31,4 +31,7 @@ public class ContactHelper extends HelperBase {
     public void submitContactCreation() {
           click(By.xpath("//div[@id='content']/form/input[21]"));
     }
+    public void returnToHomePage() {
+        wd.findElement(By.linkText("home page")).click();
+    }
 }
