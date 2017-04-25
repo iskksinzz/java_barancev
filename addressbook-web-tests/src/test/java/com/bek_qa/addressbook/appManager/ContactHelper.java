@@ -29,6 +29,6 @@ public class ContactHelper extends HelperBase {
     }
 
     public void submitContactCreation() {
-          wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
+          click(By.xpath("//div[@id='content']/form/input[21]"));
     }
 }
