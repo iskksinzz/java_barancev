@@ -49,10 +49,11 @@ public class GroupCreationTest {
     private void initGroupCreation() {
         wd.findElement(By.name("new")).click();
     }
+    private void fillGroupForm(GroupData groupData) {
+//used to be just fillGroupForm()
+//1. We refactored by extracting parameters fillGroupForm(String groupName, String groupHeader, String groupFooter)
+//2. We refactored by extracting parameter objects. class GroupData was created
 
-    //1. We refactored by extracting parameters fillGroupForm(String groupName, String groupHeader, String groupFooter)
-    //2. We refactored by extracting parameter objects. class GroupData was created
-    private void fillGroupForm(GroupData groupData) { //used to be fillGroupForm()
         wd.findElement(By.name("group_name")).click();
         wd.findElement(By.name("group_name")).clear();
 
@@ -74,14 +75,12 @@ public class GroupCreationTest {
 //used to be sendKeys(groupFooter) before refac/extract parameter obj
         wd.findElement(By.name("group_footer")).sendKeys(groupData.getGroupFooter());//used to be ("group footer test")
     }
-
     private void submitGroupCreation() {
         wd.findElement(By.name("submit")).click();
     }
     private void returnToGroupPage() {
         wd.findElement(By.linkText("group page")).click();
     }
-
 
     @AfterMethod
     public void tearDown() {
