@@ -34,7 +34,10 @@ public class GroupCreationTest {
     public void testGroupCreation() {
         gotoGroupPage();
         initGroupCreation();
-        fillGroupForm("group name text", "group header test", "group footer test");
+
+//used to be just fillGroupForm() until we refactored by extracting param obj, that created a separate class GroupData
+        fillGroupForm(new GroupData("group name text", "group header test", "group footer test"));
+
         submitGroupCreation();
         returnToGroupPage();
     }
@@ -46,17 +49,32 @@ public class GroupCreationTest {
     private void initGroupCreation() {
         wd.findElement(By.name("new")).click();
     }
-    private void fillGroupForm(String groupName, String groupHeader, String groupFooter) { //used to be fillGroupForm()
+
+    //1. We refactored by extracting parameters fillGroupForm(String groupName, String groupHeader, String groupFooter)
+    //2. We refactored by extracting parameter objects. class GroupData was created
+    private void fillGroupForm(GroupData groupData) { //used to be fillGroupForm()
         wd.findElement(By.name("group_name")).click();
         wd.findElement(By.name("group_name")).clear();
-        wd.findElement(By.name("group_name")).sendKeys(groupName);//used to be sendKeys("group name text") before refactoring
+
+//used to be sendKeys("group name text") before refac/extract parameters
+//used to be sendKeys(groupName) before refac/extract parameter obj
+        wd.findElement(By.name("group_name")).sendKeys(groupData.getGroupName());
+
         wd.findElement(By.name("group_header")).click();
         wd.findElement(By.name("group_header")).clear();
-        wd.findElement(By.name("group_header")).sendKeys(groupHeader);//used to be ("group header test")
+
+//used to be sendKeys("group header text") before refac/extract parameters
+//used to be sendKeys(groupHeader) before refac/extract parameter obj
+        wd.findElement(By.name("group_header")).sendKeys(groupData.getGroupHeader());//used to be ("group header test")
+
         wd.findElement(By.name("group_footer")).click();
         wd.findElement(By.name("group_footer")).clear();
-        wd.findElement(By.name("group_footer")).sendKeys(groupFooter);//used to be ("group footer test")
+
+//used to be sendKeys("group footer text") before refac/extract parameters
+//used to be sendKeys(groupFooter) before refac/extract parameter obj
+        wd.findElement(By.name("group_footer")).sendKeys(groupData.getGroupFooter());//used to be ("group footer test")
     }
+
     private void submitGroupCreation() {
         wd.findElement(By.name("submit")).click();
     }
