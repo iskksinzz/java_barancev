@@ -7,11 +7,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 /**
  * Created by Bek on 4/24/2017.
  */
-public class GroupHelper {
-    private FirefoxDriver wd; //This object is used by all test classes
+public class GroupHelper extends HelperBase{
 
     public GroupHelper(FirefoxDriver wd) {
-        this.wd =wd;
+        super(wd); //this is a call to constructor in base class
     }
 
     public void initGroupCreation() {
@@ -25,18 +24,8 @@ public class GroupHelper {
         type(By.name("group_footer"), groupData.getGroupFooter());
     }
 
-    private void type(By locator, String text) {
-        click(locator);
-        wd.findElement(locator).clear();
-        wd.findElement(locator).sendKeys(text);
-    }
-
     public void submitGroupCreation() {
         click(By.name("submit"));
-    }
-
-    private void click(By locator) {
-        wd.findElement(locator).click();
     }
 
     public void returnToGroupPage() {
