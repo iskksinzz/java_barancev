@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
  */
 public class TestBase {
 
-    protected final ApplicationManager applicationManager = new ApplicationManager();
+    protected ApplicationManager applicationManager = new ApplicationManager();
 
     @BeforeMethod
     public void setUp() throws Exception {

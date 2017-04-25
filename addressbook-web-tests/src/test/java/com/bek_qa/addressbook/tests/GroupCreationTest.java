@@ -9,11 +9,11 @@ public class GroupCreationTest extends TestBase {
     @Test
     public void testGroupCreation() {
         applicationManager.gotoGroupPage();
-        applicationManager.initGroupCreation();
+        applicationManager.getGroupHelper().initGroupCreation();
 //used to be just fillGroupForm() until we refactored by extracting param obj, that created a separate class GroupData
-        applicationManager.fillGroupForm(new GroupData("group name text", "group header test", "group footer test"));
-        applicationManager.submitGroupCreation();
-        applicationManager.returnToGroupPage();
+        applicationManager.getGroupHelper().fillGroupForm(new GroupData("group name text", "group header test", "group footer test"));
+        applicationManager.getGroupHelper().submitGroupCreation();
+        applicationManager.getGroupHelper().returnToGroupPage();
     }
 
 }
