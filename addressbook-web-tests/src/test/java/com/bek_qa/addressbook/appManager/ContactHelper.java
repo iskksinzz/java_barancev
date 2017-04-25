@@ -34,4 +34,16 @@ public class ContactHelper extends HelperBase {
     public void returnToHomePage() {
         wd.findElement(By.linkText("home page")).click();
     }
+
+    public void selectTopContact() {
+        wd.findElement(By.name("selected[]"));
+    }
+
+    public void deleteSelectedContact() {
+        wd.findElement(By.xpath("//div[@id='content']/form[2]/div[2]/input")).click();
+    }
+
+    public void clickDialogBox() {
+        wd.switchTo().alert().accept();
+    }
 }
