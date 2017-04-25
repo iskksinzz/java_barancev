@@ -46,4 +46,12 @@ public class ContactHelper extends HelperBase {
     public void clickDialogBox() {
         wd.switchTo().alert().accept();
     }
+
+    public void editContact() {
+        wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img")).click();
+    }
+
+    public void submitUpdate() {
+        wd.findElement(By.name("update")).click();
+    }
 }

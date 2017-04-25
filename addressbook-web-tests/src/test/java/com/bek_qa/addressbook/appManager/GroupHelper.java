@@ -45,4 +45,8 @@ public class GroupHelper extends HelperBase{
             click(By.name("selected[]"));
         }
     }
+
+    public void editGoup() {
+        wd.findElement(By.name("edit")).click();
+    }
 }
