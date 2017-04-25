@@ -19,7 +19,7 @@ public class GroupDeletionTest extends TestBase {
 
 //        wd.findElement(By.linkText("groups")).click(); is deleted and we use
 //        previously created method gotoGroupPage()
-        applicationManager.gotoGroupPage();
+        applicationManager.getNavigationHelper().gotoGroupPage();
         applicationManager.getGroupHelper().selectGroup(); //Created a new method, didn't make earlier
         applicationManager.getGroupHelper().deletSelectedGroups(); //Created a new method, didn't make earlier
 
