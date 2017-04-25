@@ -15,55 +15,45 @@ public class GroupHelper {
     }
 
     public void initGroupCreation() {
-        wd.findElement(By.name("new")).click();
+        click(By.name("new"));
     }
 
     public void fillGroupForm(GroupData groupData) {
-//used to be just fillGroupForm()
-//1. We refactored by extracting parameters fillGroupForm(String groupName, String groupHeader, String groupFooter)
-//2. We refactored by extracting parameter objects. class GroupData was created
 
-        wd.findElement(By.name("group_name")).click();
-        wd.findElement(By.name("group_name")).clear();
+        type(By.name("group_name"), groupData.getGroupName());
+        type(By.name("group_header"), groupData.getGroupHeader());
+        type(By.name("group_footer"), groupData.getGroupFooter());
+    }
 
-//used to be sendKeys("group name text") before refac/extract parameters
-//used to be sendKeys(groupName) before refac/extract parameter obj
-        wd.findElement(By.name("group_name")).sendKeys(groupData.getGroupName());
-
-        wd.findElement(By.name("group_header")).click();
-        wd.findElement(By.name("group_header")).clear();
-
-//used to be sendKeys("group header text") before refac/extract parameters
-//used to be sendKeys(groupHeader) before refac/extract parameter obj
-        wd.findElement(By.name("group_header")).sendKeys(groupData.getGroupHeader());//used to be ("group header test")
-
-        wd.findElement(By.name("group_footer")).click();
-        wd.findElement(By.name("group_footer")).clear();
-
-//used to be sendKeys("group footer text") before refac/extract parameters
-//used to be sendKeys(groupFooter) before refac/extract parameter obj
-        wd.findElement(By.name("group_footer")).sendKeys(groupData.getGroupFooter());//used to be ("group footer test")
+    private void type(By locator, String text) {
+        click(locator);
+        wd.findElement(locator).clear();
+        wd.findElement(locator).sendKeys(text);
     }
 
     public void submitGroupCreation() {
-        wd.findElement(By.name("submit")).click();
+        click(By.name("submit"));
+    }
+
+    private void click(By locator) {
+        wd.findElement(locator).click();
     }
 
     public void returnToGroupPage() {
-        wd.findElement(By.linkText("group page")).click();
+        click(By.linkText("group page"));
     }
 
     // This method came from GroupDeletionTest when we created this method there
     // and access modifier was private there
     public void deletSelectedGroups() {
-        wd.findElement(By.name("delete")).click();
+        click(By.name("delete"));
     }
 
     // This method came from GroupDeletionTest when we created this method there
     // and access modifier was private there
     public void selectGroup() {
         if (!wd.findElement(By.name("selected[]")).isSelected()) {
-            wd.findElement(By.name("selected[]")).click();
+            click(By.name("selected[]"));
         }
     }
 }
