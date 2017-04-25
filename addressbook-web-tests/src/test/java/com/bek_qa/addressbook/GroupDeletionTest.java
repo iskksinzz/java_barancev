@@ -18,13 +18,13 @@ public class GroupDeletionTest extends TestBase {
 
 //        wd.findElement(By.linkText("groups")).click(); is deleted and we use
 //        previously created method gotoGroupPage()
-        gotoGroupPage();
-        selectGroup(); //Created a new method, didn't make earlier
-        deletSelectedGroups(); //Created a new method, didn't make earlier
+        applicationManager.gotoGroupPage();
+        applicationManager.selectGroup(); //Created a new method, didn't make earlier
+        applicationManager.deletSelectedGroups(); //Created a new method, didn't make earlier
 
         //we use previously created method instead of
         //wd.findElement(By.linkText("group page")).click();
-        returnToGroupPage();
+        applicationManager.returnToGroupPage();
     }
 
 }
