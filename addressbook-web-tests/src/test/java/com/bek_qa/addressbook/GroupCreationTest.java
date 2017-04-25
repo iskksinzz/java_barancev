@@ -37,8 +37,21 @@ public class GroupCreationTest {
 
     @Test
     public void testGroupCreation() {
+        gotoGroupPage();
+        initGroupCreation();
+        fillGroupForm();
+        submitGroupCreation();
+        returnToGroupPage();
+    }
+
+    //Helper methods refactored from Selenium generated code
+    private void gotoGroupPage() {
         wd.findElement(By.linkText("groups")).click();
+    }
+    private void initGroupCreation() {
         wd.findElement(By.name("new")).click();
+    }
+    private void fillGroupForm() {
         wd.findElement(By.name("group_name")).click();
         wd.findElement(By.name("group_name")).clear();
         wd.findElement(By.name("group_name")).sendKeys("group name text");
@@ -48,10 +61,15 @@ public class GroupCreationTest {
         wd.findElement(By.name("group_footer")).click();
         wd.findElement(By.name("group_footer")).clear();
         wd.findElement(By.name("group_footer")).sendKeys("group footer test");
+    }
+    private void submitGroupCreation() {
         wd.findElement(By.name("submit")).click();
+    }
+    private void returnToGroupPage() {
         wd.findElement(By.linkText("group page")).click();
     }
-    
+
+
     @AfterMethod
     public void tearDown() {
         wd.quit();
