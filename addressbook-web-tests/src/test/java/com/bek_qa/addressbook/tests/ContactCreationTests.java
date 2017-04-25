@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.*;
 
-public class NewEntryTests {
+public class ContactCreationTests {
     FirefoxDriver wd;
     
     @BeforeMethod
@@ -74,7 +74,7 @@ public class NewEntryTests {
     public void tearDown() {
         wd.quit();
     }
-    
+
     public static boolean isAlertPresent(FirefoxDriver wd) {
         try {
             wd.switchTo().alert();
