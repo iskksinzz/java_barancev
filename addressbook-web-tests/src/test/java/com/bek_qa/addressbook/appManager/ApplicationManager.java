@@ -1,7 +1,7 @@
 package com.bek_qa.addressbook.appManager;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import sun.plugin2.util.BrowserType;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,6 +16,7 @@ public class ApplicationManager {
     private GroupHelper groupHelper; //word final should be deleted
 
     public void init() {
+        String browser = BrowserType.FIREFOX;
         wd = new FirefoxDriver();
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         wd.get("http://localhost/addressbook/");
