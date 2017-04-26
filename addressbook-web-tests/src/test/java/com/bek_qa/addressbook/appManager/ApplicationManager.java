@@ -1,6 +1,8 @@
 package com.bek_qa.addressbook.appManager;
 
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
 
 import java.util.concurrent.TimeUnit;
@@ -17,7 +19,13 @@ public class ApplicationManager {
 
     public void init() {
         String browser = BrowserType.FIREFOX;
-        wd = new FirefoxDriver();
+        if(browser == BrowserType.FIREFOX ) {
+            wd = new FirefoxDriver();
+        }else if(browser == BrowserType.CHROME{
+            wd = new ChromeDriver(); //we import it through Alt+Enter
+        } else if(browser == BrowserType.IE){
+            wd = new InternetExplorerDriver(); 
+        }// else part will be added lat er
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         wd.get("http://localhost/addressbook/");
         groupHelper = new GroupHelper(wd);
