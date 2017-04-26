@@ -12,11 +12,16 @@ import java.util.concurrent.TimeUnit;
  * Created by Bek on 4/24/2017.
  */
 public class ApplicationManager {
+    private final String browser;
     WebDriver wd;
     private SessionHelper sessionHelper;
     private ContactHelper contactHelper;
     private NavigationHelper navigationHelper;
     private GroupHelper groupHelper; //word final should be deleted
+
+    public ApplicationManager(String browser) {
+        this.browser = browser;
+    }
 
     public void init() {
         String browser = BrowserType.FIREFOX;
