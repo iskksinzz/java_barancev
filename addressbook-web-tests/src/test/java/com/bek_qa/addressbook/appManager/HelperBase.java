@@ -2,15 +2,16 @@ package com.bek_qa.addressbook.appManager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  * Created by Bek on 4/24/2017.
  */
 public class HelperBase {
-    protected FirefoxDriver wd; //This object is used by all test classes
+    protected WebDriver wd; //This object is used by all test classes
 
-    public HelperBase(FirefoxDriver wd) {
+    public HelperBase(WebDriver wd) {
         this.wd =wd;
     }
 
