@@ -1,7 +1,7 @@
 package com.bek_qa.addressbook.appManager;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
-import sun.plugin2.util.BrowserType;
+import org.openqa.selenium.remote.BrowserType;
 
 import java.util.concurrent.TimeUnit;
 
