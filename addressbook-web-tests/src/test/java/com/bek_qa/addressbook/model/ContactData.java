@@ -3,6 +3,8 @@ package com.bek_qa.addressbook.model;
 public class ContactData {
     private final String fName;
     private final String lName;
+    private String group;
+
     private final String companyName;
     private final String address;
     private final String suite;
@@ -10,9 +12,10 @@ public class ContactData {
     private final String workPhone;
     private final String email;
 
-    public ContactData(String fName, String lName, String companyName, String address, String suite, String cityStateZip, String workPhone, String email) {
+    public ContactData(String fName, String lName, String group, String companyName, String address, String suite, String cityStateZip, String workPhone, String email) {
         this.fName = fName;
         this.lName = lName;
+        this.group = group;
         this.companyName = companyName;
         this.address = address;
         this.suite = suite;
@@ -52,4 +55,6 @@ public class ContactData {
     public String getEmail() {
         return email;
     }
+
+    public String getGroup() {return  group;}
 }
