@@ -3,7 +3,10 @@ package com.bek_qa.addressbook.appManager;
 import com.bek_qa.addressbook.model.ContactData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+
+import java.util.NoSuchElementException;
 
 /**
  * Created by Bek on 4/24/2017.
@@ -18,15 +21,31 @@ public class ContactHelper extends HelperBase {
           wd.findElement(By.linkText("add new")).click();
     }
 
-    public void fillContactForm(ContactData contactData) {
+    public void fillContactForm(ContactData contactData, boolean creating) {
         type(By.name("firstname"),contactData.getfName());
         type(By.name("lastname"),contactData.getlName());
+
+        //if(creating){
+        new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+        //} else {
+        //    Assert.assertFalse(isElementPresent(By.name("new_group")));
+        //}
+
         type(By.name("company"),contactData.getCompanyName());
         type(By.name("address"),contactData.getAddress());
         type(By.name("address"),contactData.getSuite());
         type(By.name("address"),contactData.getCityStateZip());
         type(By.name("work"),contactData.getWorkPhone());
         type(By.name("email"),contactData.getEmail());
+    }
+
+    private boolean isElementPresent(By locator) {
+        try{
+            wd.findElement(locator);
+            return true;
+        } catch (NoSuchElementException ex){
+            return false;
+        }
     }
 
     public void submitContactCreation() {
