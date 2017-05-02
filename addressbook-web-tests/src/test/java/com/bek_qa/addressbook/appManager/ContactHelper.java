@@ -25,28 +25,21 @@ public class ContactHelper extends HelperBase {
         type(By.name("firstname"),contactData.getfName());
         type(By.name("lastname"),contactData.getlName());
 
-        //if(creating){
-        new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-        //} else {
-        //    Assert.assertFalse(isElementPresent(By.name("new_group")));
-        //}
+        if(isElementPresent(By.name("new_group"))) {
+            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+//        } else {
+//            Assert.assertFalse(isElementPresent(By.name("new_group")));
+//        }
 
-        type(By.name("company"),contactData.getCompanyName());
-        type(By.name("address"),contactData.getAddress());
-        type(By.name("address"),contactData.getSuite());
-        type(By.name("address"),contactData.getCityStateZip());
-        type(By.name("work"),contactData.getWorkPhone());
-        type(By.name("email"),contactData.getEmail());
-    }
-
-    private boolean isElementPresent(By locator) {
-        try{
-            wd.findElement(locator);
-            return true;
-        } catch (NoSuchElementException ex){
-            return false;
+            type(By.name("company"), contactData.getCompanyName());
+            type(By.name("address"), contactData.getAddress());
+            type(By.name("address"), contactData.getSuite());
+            type(By.name("address"), contactData.getCityStateZip());
+            type(By.name("work"), contactData.getWorkPhone());
+            type(By.name("email"), contactData.getEmail());
         }
     }
+
 
     public void submitContactCreation() {
           click(By.xpath("//div[@id='content']/form/input[21]"));
