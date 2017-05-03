@@ -11,9 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class GroupHelper extends HelperBase{
 
     public GroupHelper(WebDriver wd) {
-        super(wd); //this is a call to constructor in base class
-    }
-
+        super(wd);}
     public void initGroupCreation() {
         click(By.name("new"));
     }
@@ -33,21 +31,26 @@ public class GroupHelper extends HelperBase{
         click(By.linkText("group page"));
     }
 
-    // This method came from GroupDeletionTest when we created this method there
-    // and access modifier was private there
     public void deletSelectedGroups() {
         click(By.name("delete"));
     }
 
-    // This method came from GroupDeletionTest when we created this method there
-    // and access modifier was private there
     public void selectGroup() {
-        if (!wd.findElement(By.name("selected[]")).isSelected()) {
-            click(By.name("selected[]"));
-        }
+        click(By.name("selected"));
     }
 
     public void editGoup() {
         wd.findElement(By.name("edit")).click();
+    }
+
+    public void createGroup(GroupData group) {
+        initGroupCreation();
+        fillGroupForm(group);
+        submitGroupCreation();
+        returnToGroupPage();
+    }
+
+    public boolean isThereAGroup() {
+        return isElementPresent(By.name("selected[]"));
     }
 }
